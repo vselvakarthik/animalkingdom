@@ -10,7 +10,8 @@ class BirdTest {
 	void testFly() {
 		Bird bird = new Bird();
 		try {
-			bird.fly();
+			boolean result = bird.fly();
+			assertTrue(result);
 		} catch (Exception e) {
 			fail("Execute without error");
 		}
@@ -20,7 +21,8 @@ class BirdTest {
 	void testSing() {
 		Bird bird = new Bird();
 		try {
-			bird.sing();
+			String result = bird.sing();
+			assertNotNull(result);
 		} catch (Exception e) {
 			fail("Execute without error");
 		}
