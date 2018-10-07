@@ -85,6 +85,45 @@ public class AnimalFactory {
 		return dolphin;
 	}
 
+	/**
+	 * Creates a Butterfly
+	 * @return Butterfly instance
+	 */
+	public static Animal createCaterpillar() {
+		Animal caterpillar = new Animal();
+		caterpillar.setSwimmable(false);
+		caterpillar.setCanWalk(true);
+		caterpillar.setCanSing(false);
+		caterpillar.setFlyable(false);
+		return caterpillar;
+	}
+
+	/**
+	 * Metamorphs a Caterpillar Butterfly
+	 * @param caterpillar Caterpillar instance
+	 * @return Butterfly instance
+	 */
+	public static void metamorphToButterfly(Animal caterpillar) {
+		Animal butterfly = caterpillar;
+		butterfly.setSwimmable(false);
+		butterfly.setCanWalk(false);
+		butterfly.setCanSing(false);
+		butterfly.setFlyable(true);
+	}
+
+	/**
+	 * Creates a Butterfly
+	 * @return Butterfly instance
+	 */
+	public static Animal createButterfly() {
+		Animal butterfly = new Animal();
+		butterfly.setSwimmable(false);
+		butterfly.setCanWalk(false);
+		butterfly.setCanSing(false);
+		butterfly.setFlyable(true);
+		return butterfly;
+	}
+
 
 
 }

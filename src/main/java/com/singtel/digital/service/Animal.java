@@ -2,6 +2,7 @@ package com.singtel.digital.service;
 
 public class Animal {
 
+	private boolean flyable = false;
 	private boolean swimmable = false;
 	private boolean canSing = false;
 	private boolean canWalk = true;
@@ -82,4 +83,24 @@ public class Animal {
 		System.out.println("I am singing");
 		return "Sung default";
 	}
+	
+	public boolean canFly() {
+		return flyable;
+	}
+	
+	public void setFlyable(boolean flyable) {
+		this.flyable = flyable;
+	}
+
+	/**
+	 * Makes bird fly
+	 */
+	public boolean fly() {
+		if (flyable) {
+			System.out.println("I am flying");
+			return true;
+		}
+		return false;
+	}
+
 }

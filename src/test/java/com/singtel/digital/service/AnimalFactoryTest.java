@@ -81,11 +81,41 @@ class AnimalFactoryTest {
 	}
 
 	@Test
-	void testCreateDolphine() {
+	void testCreateDolphin() {
 		Animal dolphin = AnimalFactory.createDolphin();
 		assertNotNull(dolphin);
 		assertFalse(dolphin.canWalk());
 		assertTrue(dolphin.canSwim());
+	}
+
+	@Test
+	void testCreateButterfly() {
+		Animal butterfly = AnimalFactory.createButterfly();
+		assertNotNull(butterfly);
+		assertTrue(butterfly.canFly());
+		assertFalse(butterfly.canSing());
+	}
+
+	@Test
+	void testCreateCaterpillar() {
+		Animal caterpillar = AnimalFactory.createCaterpillar();
+		assertNotNull(caterpillar);
+		assertFalse(caterpillar.canFly());
+		assertTrue(caterpillar.canWalk());
+	}
+
+	@Test
+	void testMetamorphToButterfly() {
+		Animal caterpillar = AnimalFactory.createCaterpillar();
+		assertNotNull(caterpillar);
+		assertFalse(caterpillar.canFly());
+		assertTrue(caterpillar.canWalk());
+		
+		AnimalFactory.metamorphToButterfly(caterpillar);
+		Animal butterfly = caterpillar; // caterpillar is now a butterfly
+		assertNotNull(butterfly);
+		assertTrue(butterfly.canFly());
+		assertFalse(butterfly.canSing());
 	}
 
 
