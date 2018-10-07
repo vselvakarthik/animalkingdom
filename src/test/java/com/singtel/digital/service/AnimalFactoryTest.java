@@ -51,7 +51,42 @@ class AnimalFactoryTest {
 		assertNotNull(parrot);
 		assertTrue(parrot.fly());
 		assertFalse(parrot.canSwim());
-		assertEquals("Sung woof woof", parrot.sing());
+		assertEquals(dog.sing(), parrot.sing());
 	}
+	
+	@Test
+	void testCreateShark() {
+		Fish shark = AnimalFactory.createShark();
+		assertNotNull(shark);
+		assertFalse(shark.canWalk());
+		assertTrue(shark.canSwim());
+		assertFalse(shark.canJoke());
+		assertTrue(shark.canEatFish());
+		assertFalse(shark.canSing());
+		assertSame(AnimalSize.LARGE, shark.getSize());
+		assertSame(AnimalColour.GREY, shark.getColour());
+	}
+
+	@Test
+	void testCreateClownFish() {
+		Fish clownFish = AnimalFactory.createClownFish();
+		assertNotNull(clownFish);
+		assertFalse(clownFish.canWalk());
+		assertTrue(clownFish.canSwim());
+		assertTrue(clownFish.canJoke());
+		assertFalse(clownFish.canEatFish());
+		assertFalse(clownFish.canSing());
+		assertSame(AnimalSize.SMALL, clownFish.getSize());
+		assertSame(AnimalColour.ORANGE, clownFish.getColour());
+	}
+
+	@Test
+	void testCreateDolphine() {
+		Animal dolphin = AnimalFactory.createDolphin();
+		assertNotNull(dolphin);
+		assertFalse(dolphin.canWalk());
+		assertTrue(dolphin.canSwim());
+	}
+
 
 }

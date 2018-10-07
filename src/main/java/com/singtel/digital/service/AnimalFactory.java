@@ -46,5 +46,45 @@ public class AnimalFactory {
 		Bird parrot = createParrot(friend.getCustomSong());
 		return parrot;
 	}
+	
+	/**
+	 * Creates a Shark
+	 * @return Shark instance
+	 */
+	public static Fish createShark() {
+		Fish shark = new Fish();
+		shark.setCanJoke(false);
+		shark.setCanEatFish(true);
+		shark.setColour(AnimalColour.GREY);
+		shark.setSize(AnimalSize.LARGE);
+		return shark;
+	}
+
+	/**
+	 * Creates clown fish
+	 * @return Clown Fish instance
+	 */
+	public static Fish createClownFish() {
+		Fish clownFish = new Fish();
+		clownFish.setCanJoke(true);
+		clownFish.setCanEatFish(false);
+		clownFish.setColour(AnimalColour.ORANGE);
+		clownFish.setSize(AnimalSize.SMALL);
+		return clownFish;
+	}
+	
+	/**
+	 * Creates a Dolphin
+	 * @return Dolphin instance
+	 */
+	public static Animal createDolphin() {
+		Animal dolphin = new Animal();
+		dolphin.setSwimmable(true);
+		dolphin.setCanWalk(false);
+		dolphin.setCanSing(false);
+		return dolphin;
+	}
+
+
 
 }

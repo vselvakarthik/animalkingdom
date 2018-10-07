@@ -2,7 +2,12 @@ package com.singtel.digital.service;
 
 public class Bird extends Animal {
 
-	private boolean flyable = true;
+	private boolean flyable = true; // By default birds can fly
+	
+	public Bird() {
+		// By default birds can sing
+		setCanSing(true);
+	}
 	
 	public boolean canFly() {
 		return flyable;
@@ -23,15 +28,4 @@ public class Bird extends Animal {
 		return false;
 	}
 
-	/**
-	 * Makes bird sing
-	 */
-	public String sing() {
-		if (customSong != null) {
-			System.out.println("I am singing " + customSong);
-			return "Sung " + customSong;
-		}
-		System.out.println("I am singing");
-		return "Sung default";
-	}
 }
