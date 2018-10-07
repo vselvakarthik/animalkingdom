@@ -123,7 +123,51 @@ public class AnimalFactory {
 		butterfly.setFlyable(true);
 		return butterfly;
 	}
-
-
+	
+	/**
+	 * Creates a Dog
+	 * @return Dog instance
+	 */
+	public static Animal createDog() {
+		Animal dog = new Animal();
+		dog.setSwimmable(true);
+		dog.setCanWalk(true);
+		dog.setCustomSong("Woof Woof");
+		return dog;
+	}
+	
+	/**
+	 * Creates a Cat
+	 * @return Cat instance
+	 */
+	public static Animal createCat() {
+		Animal cat = new Animal();
+		cat.setSwimmable(false);
+		cat.setCanWalk(true);
+		cat.setCustomSong("Meow Meow");
+		return cat;
+	}
+	
+	/**
+	 * Creates a Frog
+	 * @return Frog instance
+	 */
+	public static Animal createFrog() {
+		Animal frog = new Animal();
+		frog.setSwimmable(true);
+		frog.setCanWalk(true);
+		frog.setCustomSong("Rebeck Rebeck");
+		return frog;
+	}
+		
+	
+	public static Animal[] createAll() {
+		Animal[] animals = new Animal[] {
+				new Bird(), createDuck(), createChicken(), createRooster(), createParrot("key key"),
+				new Fish(), createShark(), createClownFish(), createDolphin(),
+				createFrog(), createDog(), createButterfly(), createCat()
+		};
+		return animals;
+	}
 
 }
